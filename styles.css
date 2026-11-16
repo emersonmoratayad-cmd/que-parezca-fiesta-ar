@@ -1,0 +1,52 @@
+* { box-sizing: border-box; }
+:root {
+  --ink: #17131d; --plum: #241c2d; --cream: #f7eee0;
+  --gold: #f4c76b; --pink: #e94e77; --mint: #29a18c;
+}
+html, body { margin: 0; min-height: 100%; background: var(--ink); color: var(--cream); font-family: "DM Sans", sans-serif; }
+body { min-height: 100svh; overflow-x: hidden; }
+button, a { font: inherit; }
+.app-shell { min-height: 100svh; background:
+  radial-gradient(ellipse at 85% 8%, rgba(123,76,154,.34), transparent 34%),
+  radial-gradient(ellipse at 4% 90%, rgba(233,78,119,.18), transparent 35%),
+  var(--ink); }
+.intro { width: min(100%, 560px); min-height: 100svh; margin: auto; padding: max(36px, env(safe-area-inset-top)) 28px max(28px, env(safe-area-inset-bottom)); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.brand-kicker, .eyebrow { color: var(--gold); font-size: 11px; letter-spacing: .2em; font-weight: 800; }
+.spark { font-size: 18px; margin-right: 8px; }
+.brand-mark { margin-top: 32px; width: 64px; height: 64px; border: 1px solid rgba(244,199,107,.65); border-radius: 20px 20px 20px 4px; display: grid; place-items: center; font-family: "Playfair Display", serif; font-size: 23px; font-weight: 800; color: var(--gold); transform: rotate(-5deg); }
+.brand-mark span { color: var(--pink); }
+h1 { margin: 20px 0 14px; font: 800 clamp(46px, 13vw, 70px)/.98 "Playfair Display", serif; letter-spacing: -.045em; }
+h1 em { color: var(--gold); font-style: normal; }
+.lead { color: rgba(247,238,224,.76); font-size: 16px; line-height: 1.65; max-width: 390px; margin: 0 0 28px; }
+.steps { width: 100%; display: grid; gap: 12px; margin: 0 0 28px; }
+.steps div { display: flex; align-items: center; gap: 14px; color: rgba(247,238,224,.84); font-size: 13px; }
+.steps b { color: var(--pink); font-size: 11px; letter-spacing: .12em; }
+.primary-btn { width: 100%; min-height: 56px; border: 0; border-radius: 16px; color: var(--ink); background: linear-gradient(110deg, var(--gold), #ffe4a6); font-weight: 800; box-shadow: 0 12px 35px rgba(244,199,107,.17); cursor: pointer; }
+.primary-btn:active { transform: scale(.985); }
+.text-btn { width: 100%; padding: 17px 8px 10px; color: var(--cream); background: transparent; border: 0; font-weight: 600; cursor: pointer; }
+.fine-print { color: rgba(247,238,224,.48); font-size: 11px; text-align: center; width: 100%; margin-top: 16px; }
+.hidden { display: none !important; }
+.ar-stage { position: fixed; inset: 0; background: #09080c; overflow: hidden; }
+.ar-topbar { position: absolute; z-index: 5; top: max(14px, env(safe-area-inset-top)); left: 16px; right: 16px; display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
+.mini-brand { font-weight: 800; letter-spacing: .12em; font-size: 13px; color: var(--gold); text-shadow: 0 2px 12px #000; }
+.mini-brand span { color: white; font-size: 9px; margin-left: 7px; letter-spacing: .08em; }
+.icon-btn { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.24); background: rgba(23,19,29,.72); color: white; font-size: 18px; cursor: pointer; }
+.ar-topbar .icon-btn { pointer-events: auto; }
+.scan-hint { position: absolute; z-index: 4; top: max(76px, calc(env(safe-area-inset-top) + 66px)); left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100% - 32px); padding: 12px 16px; border-radius: 30px; background: rgba(23,19,29,.78); color: white; font-size: 12px; text-align: center; backdrop-filter: blur(10px); }
+.scan-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); margin-right: 8px; box-shadow: 0 0 0 4px rgba(244,199,107,.16); }
+.ar-stage a-scene { position: absolute !important; inset: 0; width: 100%; height: 100%; }
+.ar-bottom-note { position: absolute; z-index: 4; bottom: max(20px, env(safe-area-inset-bottom)); left: 12px; right: 12px; text-align: center; color: white; font-size: 11px; text-shadow: 0 2px 8px #000; pointer-events: none; }
+.video-modal { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; padding: 18px; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(8,6,11,.86); backdrop-filter: blur(8px); }
+.video-card { position: relative; z-index: 1; width: min(100%, 470px); max-height: 94svh; overflow: auto; background: #211a29; border: 1px solid rgba(244,199,107,.28); border-radius: 24px; padding: 17px; box-shadow: 0 25px 90px rgba(0,0,0,.55); }
+.video-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.video-heading h2 { font: 700 23px/1.1 "Playfair Display", serif; margin: 5px 0 0; }
+.eyebrow { font-size: 9px; }
+.tiktok-frame-wrap { width: 100%; aspect-ratio: 9 / 16; max-height: 65svh; overflow: hidden; border-radius: 15px; background: #09080c; }
+.tiktok-frame-wrap iframe { width: 100%; height: 100%; border: 0; }
+.tiktok-link { display: block; padding: 15px 5px 2px; text-align: center; color: var(--gold); text-decoration: none; font-size: 12px; font-weight: 700; }
+.toast { position: fixed; z-index: 30; bottom: 24px; left: 18px; right: 18px; margin: auto; max-width: 420px; background: #30263a; border: 1px solid rgba(244,199,107,.35); border-radius: 14px; padding: 13px 16px; color: white; font-size: 13px; text-align: center; }
+@media (min-width: 700px) { .intro { padding-left: 44px; padding-right: 44px; } }
+
+.ar-play-btn { position: absolute; z-index: 6; bottom: max(58px, calc(env(safe-area-inset-bottom) + 54px)); left: 50%; transform: translateX(-50%); border: 0; border-radius: 28px; padding: 13px 22px; background: var(--gold); color: var(--ink); font-weight: 800; font-size: 13px; box-shadow: 0 8px 28px rgba(0,0,0,.38); white-space: nowrap; cursor: pointer; }
+.ar-play-btn:active { transform: translateX(-50%) scale(.97); }
